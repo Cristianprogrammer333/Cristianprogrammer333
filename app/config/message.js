@@ -13,7 +13,7 @@ const message = (mensaje, tipo) =>{
         break;
 
     default:
-        Console.LOG(mensaje.bgwhite);
+        Console.log(mensaje.bgwhite);
         break;
    }
 }
