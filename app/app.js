@@ -1,8 +1,9 @@
-import express, { Router } from "express";
+import express, {Router} from "express";
 import dotenv from "dotenv";
+import morgan from "morgan";
 import cors from "cors";
 import enviroments from "./config/enviroments";
-import taskRoutes from "./routes/task.routes"
+import taskRoutes from "./routes/task.routes";
 
 const app = express();
 
@@ -13,7 +14,8 @@ app.set("PORT", process.env.PORT);
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-// Router.use(express.json());
+app.use(morgan('dev'));
+// Router.use(express.json({}));
 
 //routes
 app.get("/", (req, res) =>{
